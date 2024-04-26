@@ -10,5 +10,4 @@
     } else {
     echo "Conexão bem sucedida!";
     }
-
 ?>
