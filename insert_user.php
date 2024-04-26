@@ -1,21 +1,12 @@
 <?php 
-// recebendo dados do formulário
-
 $nome = $_POST["nome"];
 $login = $_POST["login"];
 $setor = $_POST["setor"];
 $senha = $_POST["senha"];
 
-echo "$nome";
-echo "<br>";
-echo "$login";
-echo "<br>";
-echo "$setor";
-echo "<br>";
-echo "$senha";
-echo "<br>";
+include 'conexao.php';
 
+$insert = "INSERT INTO tb_user VALUES (NULL,'nome','login','setor','senha',)";
 
-print_r($_POST)
-
+$query = mysqli_query($conexao, $insert) or die(mysqli_error($conn));
 ?>
