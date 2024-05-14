@@ -1,6 +1,14 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
 body{
     background-color: #34495E;
-
 }
 form{
     margin-top: 10%;
@@ -29,4 +37,22 @@ a{
 
 .user {
     margin-top: 20%;
+}
+
+footer {
+    position: absolute;
+    background-color: #34495E !important;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0; 
+}
+
+.navbar {
+    background-image: linear-gradient(#202D3B, #34495E);
+    
+}
+
+.navbar-brand {
+    margin-left: 10px;
 }
