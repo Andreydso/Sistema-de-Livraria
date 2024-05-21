@@ -1,16 +1,22 @@
-<?php include 'conexao.php'; ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Usuarios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Cadastro da Editora</title>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid ">
             <h1 class="navbar-brand text-light">Andrey's Livraria</h1>
             <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#menu"
@@ -19,45 +25,56 @@
             </button>
             <div id="menu" class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav nav-menu ">
-                    <li class="nav-item"><a class="nav-link text-light" href="cadastro_cliente.html">Cadastrar Cliente</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="cadastro_cliente.html" activate>Cadastrar Cliente</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="cadastro_editora.html">Cadastrar Editora</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="listar_cliente.php">Relatório Cliente</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="listar_editora.php">Relatório Editora</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="">Relatório Editora</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="listar_user.php">Relatório Usuário</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-<div class="container pt-5">
-    <h1 class="text-light mt-5">Lista de Usuários</h1>
-    <h4 class="text-light mb-5 mt-3">Lista de todos os usuários cadastrados no sistema</h4>
-  <table class="table table-dark mt-3">
-    <thead class="">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Setor</th>
-        <th scope="col">Login</th>
-      </tr>
-    </thead>
-    <tbody>
-    <?php 
-    $select = "SELECT * from tb_user";
-    $query = mysqli_query($conexao,$select);
-    while ($result = mysqli_fetch_array($query)) {;
-    ?>
-      <tr>
-        <th scope="row"> <?php echo $result['id_user']; ?> </th>
-        <td> <?php echo $result['nm_usuario']; ?> </td>
-        <td> <?php echo $result['nm_setor']; ?> </td>
-        <td> <?php echo $result['login']; ?> </td>
-      </tr>
-  <?php } ?>
-    </tbody>
-  </table>
-</div>
+    <h1 class="text-center text-light mt-5 menor">Cadastro da Editora</h1>
+    <section class="container">
+    <div class="container text-center geraldo">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <form class="user" action="insert_editora.php" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Editora</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="nm_editora">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="nm_endereco">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label">Número do Endereco</label>
+                        <input type="number" class="form-control" id="exampleInputPassword2" name="nr_endereco">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword3" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" name="bairro">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword4" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="exampleInputPassword4" name="nr_telefone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputText5" class="form-label">Gerente</label>
+                        <input type="text" class="form-control" id="exampleInputText5" name="nm_gerente">
+                    </div>
+                    <div class="botao">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="col end-col"></div>
+    </div>
+    </section>
 
-<footer class="text-center text-lg-start text-white mb-0" style="background-color: #45526e">
+    <footer class="text-center text-lg-start text-white mb-0" style="background-color: #45526e">
         <div class="container p-4 pb-0">
 
             <section class="p-3 pt-0">
@@ -98,6 +115,8 @@
         </div>
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
 </body>
+
 </html>

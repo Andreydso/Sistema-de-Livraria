@@ -56,3 +56,15 @@ footer {
 .navbar-brand {
     margin-left: 10px;
 }
+
+.padding {
+    padding-left: 15px;
+}
+
+.menor {
+    margin-bottom: -35px;
+}
+
+.maior {
+    margin-top: 100px;
+}

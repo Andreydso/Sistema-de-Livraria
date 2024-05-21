@@ -8,7 +8,12 @@
     $cnpj = $_POST['cnpj'];
     $telefone = $_POST['telefone'];
 
-    $insert = "INSERT INTO tb_cliente VALUES (NULL,'$nome','$endereco',$nrendereco,'$cpf','$cnpj','$telefone')";
+    if (empty($nome) || empty($endereco) || empty($nrendereco) || empty($cpf)|| empty($cnpj) || empty($telefone)){
+        echo("<script> alert('Preencha todos os campos!'); history.back()</script>");
+        exit;
+    }
+
+    $insert = "INSERT INTO tb_cliente VALUES (NULL,'$nome','$endereco','$nrendereco,'$cpf','$cnpj','$telefone')";
     
     $query = mysqli_query($conexao, $insert);
  

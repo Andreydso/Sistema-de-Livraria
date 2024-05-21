@@ -29,28 +29,34 @@
         </div>
     </nav>
 <div class="container pt-5">
-    <h1 class="text-light mt-5">Lista de Usuários</h1>
-    <h4 class="text-light mb-5 mt-3">Lista de todos os usuários cadastrados no sistema</h4>
+    <h1 class="text-light mt-5">Lista de Editoras</h1>
+    <h4 class="text-light mb-5 mt-3">Lista de todas as editoras que fazem parceria com a nossa livraria</h4>
   <table class="table table-dark mt-3">
     <thead class="">
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Setor</th>
-        <th scope="col">Login</th>
+        <th scope="col">Editora</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Número do Endereço</th>
+        <th scope="col">Bairro</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Gerente</th>
       </tr>
     </thead>
     <tbody>
     <?php 
-    $select = "SELECT * from tb_user";
+    $select = "SELECT * from tb_editora";
     $query = mysqli_query($conexao,$select);
     while ($result = mysqli_fetch_array($query)) {;
     ?>
       <tr>
-        <th scope="row"> <?php echo $result['id_user']; ?> </th>
-        <td> <?php echo $result['nm_usuario']; ?> </td>
-        <td> <?php echo $result['nm_setor']; ?> </td>
-        <td> <?php echo $result['login']; ?> </td>
+        <th scope="row"> <?php echo $result['cd_editora']; ?> </th>
+        <td> <?php echo $result['nm_editora']; ?> </td>
+        <td> <?php echo $result['nm_endereco']; ?> </td>
+        <td> <?php echo $result['nr_endereco']; ?> </td>
+        <td> <?php echo $result['nm_bairro']; ?> </td>
+        <td> <?php echo $result['nr_telefone']; ?> </td>
+        <td> <?php echo $result['nm_gerente']; ?> </td>
       </tr>
   <?php } ?>
     </tbody>
