@@ -13,7 +13,6 @@ include 'conexao.php';
 
 //selecionar os dados no banco de dados
 $select = "SELECT * from tb_user WHERE login = '$login'";
-
 $query = mysqli_query($conexao,$select);
 
 $result = mysqli_fetch_array($query);
@@ -25,7 +24,7 @@ $senha_banco = $result['senha'];
 if ($login == $nome_banco && $senha == $senha_banco) {
     header('location: cadastro_cliente.html');
 } else {
-    echo("<script> alert('usuário invalido!'); history.back()</script>");
+    echo("<script> alert('usuário ou senha invalido!'); history.back()</script>");
 };
 
 ?>

@@ -5,6 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <title>Listar Usuarios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -19,11 +22,12 @@
             </button>
             <div id="menu" class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav nav-menu ">
-                    <li class="nav-item"><a class="nav-link text-light" href="cadastro_cliente.html">Cadastrar Cliente</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="cadastro_cliente.html" activate>Cadastrar Cliente</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="cadastro_editora.html">Cadastrar Editora</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="listar_cliente.php">Relatório Cliente</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="listar_editora.php">Relatório Editora</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="listar_user.php">Relatório Usuário</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="index.html">Sair</a></li>
                 </ul>
             </div>
         </div>
@@ -31,8 +35,8 @@
 <div class="container pt-5">
     <h1 class="text-light mt-5">Lista de Clientes</h1>
     <h4 class="text-light mb-5 mt-3">Lista de todos os clientes registrados em nossa livraria</h4>
-  <table class="table table-dark mt-3">
-    <thead class="">
+  <table class="table tag table-dark mt-3">
+    <thead>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
@@ -68,6 +72,7 @@
 
             <section class="p-3 pt-0">
                 <div class="row d-flex align-items-center">
+                    <hr>
                     <div class="col-md-7 col-lg-8 text-center text-md-start">
                         <div class="p-3">
                             <a class="text-white " href="#">Andrey Oliveira © - Mongaguá 2024.</a>

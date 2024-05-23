@@ -13,7 +13,7 @@
         exit;
     }
 
-    $insert = "INSERT INTO tb_cliente VALUES (NULL,'$nome','$endereco','$nrendereco,'$cpf','$cnpj','$telefone')";
+    $insert = "INSERT INTO tb_cliente VALUES (NULL,'$nome','$endereco','$nrendereco','$cpf','$cnpj','$telefone')";
     
     $query = mysqli_query($conexao, $insert);
  
