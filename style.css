@@ -73,8 +73,14 @@ footer {
     height: 70vh;
 }
 
+.nav-link {
+    margin: 5px;
+}
+
 .nav-link:hover {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
+    margin: 3px;
+    background-color: #202D3B;
     border-radius: 50px;
 }
 

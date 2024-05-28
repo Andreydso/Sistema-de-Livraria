@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 07-Maio-2024 às 02:32
+-- Tempo de geração: 28-Maio-2024 às 03:45
 -- Versão do servidor: 8.0.27
 -- versão do PHP: 8.2.0
 
@@ -48,6 +48,22 @@ INSERT INTO `tb_cliente` (`cd_cliente`, `nm_cliente`, `nm_endereco`, `nr_enderec
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tb_editora`
+--
+
+CREATE TABLE `tb_editora` (
+  `cd_editora` int NOT NULL,
+  `nm_editora` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `nm_endereco` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `nr_endereco` int NOT NULL,
+  `nm_bairro` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `nr_telefone` varchar(11) COLLATE utf8mb4_general_ci NOT NULL,
+  `nm_gerente` text COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `tb_user`
 --
 
@@ -64,7 +80,7 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `nm_usuario`, `login`, `nm_setor`, `senha`) VALUES
-(9, 'Andrey', 'andreys191900@gmail.com', 'Técnico de TI', 'Andrey367?'),
+(9, 'Andrey Oliveira ', 'andreys191900@gmail.com', 'Técnico de TI', 'Andrey367?'),
 (10, 'Alex', 'juliapereira4992@gmail.com', 'Auxiliar de limpeza', '1234');
 
 --
@@ -76,6 +92,12 @@ INSERT INTO `tb_user` (`id_user`, `nm_usuario`, `login`, `nm_setor`, `senha`) VA
 --
 ALTER TABLE `tb_cliente`
   ADD PRIMARY KEY (`cd_cliente`);
+
+--
+-- Índices para tabela `tb_editora`
+--
+ALTER TABLE `tb_editora`
+  ADD PRIMARY KEY (`cd_editora`);
 
 --
 -- Índices para tabela `tb_user`
@@ -92,6 +114,12 @@ ALTER TABLE `tb_user`
 --
 ALTER TABLE `tb_cliente`
   MODIFY `cd_cliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `tb_editora`
+--
+ALTER TABLE `tb_editora`
+  MODIFY `cd_editora` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_user`
